@@ -14,7 +14,7 @@ pnix(
     desc: "Show All commands",
   },
   async (message, match, m) => {
-  message.client.sendMessage(message.jid, { react: { text: "📃", key: m.key } });
+  message.client.sendMessage(message.jid, { react: { text: "💤", key: m.key } });
     if (match) {
       for (let i of events.commands) {
         if (i.pattern.test(message.prefix + match))
@@ -32,11 +32,11 @@ Description : ${i.desc}\`\`\``
       let runtime = clockString(currentTime - botStartTime);
 
       let menu = `╭───❮ *${BOT_NAME}* ❯
-│ *ᴏᴡɴᴇʀ* :  ${OWNER_NAME}
-│ *ᴘʀᴇғɪx* : ${prefix}
-│ *ᴘʟᴀᴛғᴏʀᴍ* : ${hostname().split("-")[0]}
-│ *ᴘʟᴜɢɪɴs* : ${events.commands.length} 
-│ *ʀᴜɴᴛɪᴍᴇ* : ${runtime} 
+│ *Owner* :  ${OWNER_NAME}
+│ *Prefix* : ${prefix}
+│ *Platform* : ${hostname().split("-")[0]}
+│ *Plugins* : ${events.commands.length} 
+│ *Runtime* : ${runtime} 
 ╰─────────────⦁\n`;
       let cmnd = [];
       let cmd;
@@ -73,7 +73,7 @@ Description : ${i.desc}\`\`\``
 
       menu += ``;
       return await message.client.sendMessage(message.jid, {
-        image: { url: `https://i.ibb.co/tHWJrz3/IMG-20231128-WA0005.jpg` },
+        image: { url: `https://telegra.ph/file/81557b0cd9531411346f3.jpg` },
         caption: tiny(menu),
         footer: tiny(
           `Phoenix-MD\nVersion : ${require("../package.json").version}`
